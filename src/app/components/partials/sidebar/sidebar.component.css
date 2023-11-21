@@ -1,0 +1,16 @@
+#sidebar-multi-level-sidebar {
+  margin-top: 40px; /* Ajuste la valeur en fonction de l'espace souhaité */
+}
+
+
+
+  li {
+    padding-bottom: 20px;
+  }
+
+  .sidebar {
+    width: 200px;
+    background-color: #f1f1f1;
+    float: left;
+    margin-top: 70px; /* Espace pour la barre de navigation */
+  }

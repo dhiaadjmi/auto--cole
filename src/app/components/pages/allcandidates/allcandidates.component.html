@@ -1,0 +1,215 @@
+<Html>
+  <head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  </head>
+</Html>
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#" ><i class="fa-solid fa-shop me-2"></i> <strong>Auto École</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase active" aria-current="page" routerLink="/users"
+          style="color: #ffc107;">Candidats</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/calendrier">Séances</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/examens">Examens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase"routerLink="">Cours</a>
+        </li>
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mon profil</span>
+
+          </a>
+          <!-- Dropdown - User Information -->
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+              aria-labelledby="userDropdown">
+
+              <button class="dropdown-item" (click)="logout()" >
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+              </button>
+          </div>
+      </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Page Heading -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+      <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Liste des candidats</h6>
+      </div>
+
+      <div class="card-body">
+        <a routerLink="/addcandidate" style="float: right;" class="btn btn-primary btn-add-user">
+          <i class="fas fa-graduation-cap"> Ajouter un Candidat</i>
+        </a>
+        <br><br><br>
+          <div class="table-responsive" >
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                      <tr>
+                          <th>username</th>
+                          <th>email</th>
+                          <th>nom</th>
+                          <th>prenom</th>
+                          <th>dateNaissance</th>
+                          <th>adresse</th>
+                          <th>numeroTel</th>
+                          <th>numeroCin</th>
+
+
+                      </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>username</th>
+                      <th>email</th>
+                      <th>nom</th>
+                      <th>prenom</th>
+                      <th>dateNaissance</th>
+                      <th>adresse</th>
+                      <th>numeroTel</th>
+                      <th>numeroCin</th>
+
+
+
+                    </tr>
+                </tfoot>
+                  <tbody>
+
+                    <tr>
+
+                        <td>candiday</td>
+                        <td>candidat@gmail.com</td>
+                        <td>candidat</td>
+                        <td>candidat</td>
+                        <td>01/02/01	</td>
+                        <td>mahdia</td>
+                        <td>22222222</td>
+                        <td>1825678</td>
+
+
+
+                        <td class="d-flex align-items-center">
+                          <button class="btn btn-warning  btn-sm mr-2" >
+                            <i class="fas fa-sync-alt"></i> Modifier
+                          </button>
+
+                          <button class="btn btn-primary  btn-sm mr-2" >
+                            <i class="fas fa-info-circle"></i> Détails
+                          </button>
+
+                          <button class="btn btn-danger  btn-sm" >
+                            <i class="fas fa-trash-alt"></i> Supprimer
+                          </button>
+                        </td>
+
+                </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- form update start here -->
+        <form >
+          <!-- firstName validation start here -->
+              <div class="form-group">
+
+                <label for="exampleFormControlInput1">username</label>
+                <input type="text" class="form-control" placeholder="username" >
+              </div>
+
+
+
+          <!-- Email validation start here -->
+
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">email</label>
+                  <input type="email" class="form-control" placeholder="email" >
+                </div>
+
+          <!-- Email validation end here -->
+
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">nom</label>
+            <input type="text" class="form-control" >
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">prenom</label>
+            <input type="text" class="form-control" placeholder="prenom" >
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">dateNaissance</label>
+            <input type="text" class="form-control" placeholder="dateNaissance">
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">adresse</label>
+            <input type="email" class="form-control" placeholder="adresse" >
+          </div>
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">numeroTel</label>
+            <input type="text" class="form-control" placeholder="numeroTel" >
+          </div>
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">  numeroCin</label>
+            <input type="number" class="form-control" placeholder="numeroCin" >
+          </div>
+
+             <button class="btn btn-primary" >Modifier Candidat </button>
+            </form>
+
+
+
+        <!-- form update end here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

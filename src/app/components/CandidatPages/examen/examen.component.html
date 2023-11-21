@@ -1,0 +1,76 @@
+<Html>
+  <head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  </head>
+</Html>
+
+
+
+
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#" ><i class="fa-solid fa-shop me-2"></i> <strong>Auto École</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+
+      <ul class="navbar-nav ms-auto ">
+
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/candidatseance">Séances</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase active" aria-current="page" routerLink="/candidatexamen"  style="color: #ffc107;">Examens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase"routerLink="">Cours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/quizcandidat">Quizs</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto ">
+
+
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mon profil</span>
+
+          </a>
+          <!-- Dropdown - User Information -->
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+              aria-labelledby="userDropdown">
+
+              <button class="dropdown-item" (click)="logout()" >
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+              </button>
+          </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<div class="container">
+  <h1> Mes Examens</h1>
+  <br>
+  <div class="calendar-container">
+    <!-- Contenu du calendrier -->
+  </div>
+</div>
+<div class="align-center">
+
+<ejs-schedule height="600" width="1200" [selectedDate]='selectedDate'
+  [eventSettings]='eventSettings' > </ejs-schedule>
+</div>
+

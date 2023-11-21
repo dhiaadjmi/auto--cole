@@ -1,0 +1,12 @@
+<ul *ngIf="dataObject">
+  <li>{{dataObject.username}}</li>
+ <li>{{dataObject.email}}</li>
+
+
+</ul>
+
+
+
+<div class="alert alert-danger" *ngIf="messageErr">
+  {{messageErr}}
+</div>

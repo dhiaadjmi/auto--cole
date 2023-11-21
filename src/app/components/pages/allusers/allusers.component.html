@@ -1,0 +1,273 @@
+<Html>
+  <head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  </head>
+</Html>
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#" ><i class="fa-solid fa-shop me-2"></i> <strong>Auto École</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase active" aria-current="page" routerLink="/users"
+          style="color: #ffc107;">Utilisateurs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/vehicules">Véhicules</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/calendrier">Séances</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/examens">Examens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase"routerLink="">Cours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/quizlist">Quizs</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto ">
+
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mon profil</span>
+
+          </a>
+          <!-- Dropdown - User Information -->
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+              aria-labelledby="userDropdown">
+
+              <button class="dropdown-item" (click)="logout()" >
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+              </button>
+          </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+
+  <!-- Page Heading -->
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+      <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Liste des utilisateurs  </h6>
+      </div>
+
+      <div class="card-body">
+        <a routerLink="/adduser" style="float: right;" class="btn btn-primary btn-add-user" >
+          <i class="fas fa-user"></i> Ajouter Utilisateur
+        </a>
+        <br><br><br>
+
+          <div class="table-responsive" >
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                      <tr>
+                          <th>Nom d'utilisateur</th>
+                          <th>Email</th>
+                          <th>Nom</th>
+                          <th>Prénom</th>
+                          <th>Date de Naissance </th>
+                          <th>Adresse</th>
+                          <th>Numéro Téléphone</th>
+                          <th>Numéro CIN</th>
+                          <th>Type Moniteur</th>
+                          <th>Num Permi</th>
+                          <th>Num Diplome</th>
+                          <th>Type Permi</th>
+                          <th>Role</th>
+
+                      </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Nom d'utilisateur</th>
+                      <th>Email</th>
+                      <th>Nom</th>
+                      <th>Prénom</th>
+                      <th>Date de Naissance </th>
+                      <th>Adresse</th>
+                      <th>Numéro Téléphone</th>
+                      <th>Numéro CIN</th>
+                      <th>Type Moniteur</th>
+                      <th>Num Permi</th>
+                      <th>Num Diplome</th>
+                      <th>Type Permi</th>
+                      <th>Role</th>
+
+                  </tr>
+                </tfoot>
+                  <tbody>
+
+                    <tr *ngFor="let item of dataArray ;index as i">
+
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.nom}}</td>
+                        <td>{{item.prenom}}</td>
+                        <td>{{item.dateNaissance}}</td>
+                        <td>{{item.adresse}}</td>
+                        <td>{{item.numeroTel}}</td>
+                        <td>{{item.numeroCin}}</td>
+                        <td>{{item.typeMoniteur}}</td>
+                        <td>{{item.numPermi}}</td>
+                        <td>{{item.numDiplome}}</td>
+                        <td>{{item.typePermi}}</td>
+                        <td>{{item.role}}</td>
+
+
+                        <td class="d-flex align-items-center">
+                          <button class="btn btn-warning  btn-sm mr-2" (click)="getdata( item.username, item.email, item.nom,item.prenom,item.dateNaissance,item.adresse,item.numeroTel,item.numeroCin,item.typeMoniteur,item.numPermi,item.numDiplome,item.typePermi,item.role,item._id)" data-toggle="modal" data-target="#exampleModal">
+                            <i class="fas fa-sync-alt"></i> Modifier
+                          </button>
+
+                          <button class="btn btn-primary  btn-sm mr-2" (click)="details(item._id)">
+                            <i class="fas fa-info-circle"></i> Détails
+                          </button>
+
+                          <button class="btn btn-danger  btn-sm" (click)="delete(item._id, i)">
+                            <i class="fas fa-trash-alt"></i> Supprimer
+                          </button>
+                        </td>
+
+                </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modifier Cette  Utilisateur</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- form update start here -->
+        <form #f="ngForm" (ngSubmit)="updatenewUser(f)">
+          <!-- firstName validation start here -->
+              <div class="form-group">
+
+                <label for="exampleFormControlInput1">Nom d'utilisateur</label>
+                <input type="text" class="form-control" placeholder="username" [(ngModel)]="dataUser.username" required name="username" #username="ngModel" ngModel minlength="2" maxlength="20">
+              </div>
+              <div class="alert alert-danger" *ngIf="username.errors?.['required'] && username.touched">
+                username is required
+              </div>
+              <div class="alert alert-danger" *ngIf="username.errors?.['minlength'] && username.touched">
+                username must be minimum 2 caractere
+              </div>
+
+
+          <!-- Email validation start here -->
+
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email</label>
+                  <input type="email" class="form-control" placeholder="email" [(ngModel)]="dataUser.email" email required name="email" #email="ngModel" ngModel>
+                </div>
+
+          <!-- Email validation end here -->
+
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">Nom</label>
+            <input type="text" class="form-control" placeholder="nom" [(ngModel)]="dataUser.nom" required name="nom" #nom="ngModel" ngModel minlength="2" maxlength="20">
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">Prénom</label>
+            <input type="text" class="form-control" placeholder="prenom" [(ngModel)]="dataUser.prenom" required name="prenom" #prenom="ngModel" ngModel minlength="2" maxlength="20">
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">Date de Naissance</label>
+            <input type="text" class="form-control" placeholder="Date de Naissance" [(ngModel)]="dataUser.dateNaissance" required name="dateNaissance" #dateNaissance="ngModel" ngModel minlength="2" maxlength="20">
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">Adresse</label>
+            <input type="email" class="form-control" placeholder="Adresse" [(ngModel)]="dataUser.adresse" required name="adresse" #adresse="ngModel" ngModel minlength="2" maxlength="20">
+          </div>
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">Numéro Téléphone</label>
+            <input type="text" class="form-control" placeholder="Numéro Téléphone" [(ngModel)]="dataUser.numeroTel" required name="numeroTel" #numeroTel="ngModel" ngModel minlength="2" maxlength="20">
+          </div>
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">  Numéro Cin</label>
+            <input type="number" class="form-control" placeholder="numeroCin" [(ngModel)]="dataUser.numeroCin" required name="numeroCin" #numeroCin="ngModel" ngModel >
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">  Type Moniteur</label>
+            <input type="text" class="form-control" placeholder="Type Moniteur" [(ngModel)]="dataUser.typeMoniteur"  name="typeMoniteur" #typeMoniteur="ngModel" ngModel minlength="2" maxlength="20">
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">  Numéro Permis</label>
+            <input type="number" class="form-control" placeholder="" [(ngModel)]="dataUser.numPermi"  name="numPermi" #numPermi="ngModel" ngModel >
+          </div>
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">  numDiplome</label>
+            <input type="number" class="form-control" placeholder="" [(ngModel)]="dataUser.numDiplome"  name="numDiplome" #numDiplome="ngModel" ngModel >
+          </div>
+
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">  typePermi</label>
+            <input type="text" class="form-control" placeholder="typePermi" [(ngModel)]="dataUser.typePermi"  name="typePermi" #typePermi="ngModel" ngModel minlength="2" maxlength="20">
+          </div>
+          <div class="form-group">
+
+            <label for="exampleFormControlInput1">  Role</label>
+            <input type="text" class="form-control" placeholder="role" [(ngModel)]="dataUser.role"  name="role" #role="ngModel" ngModel minlength="2" maxlength="20">
+          </div>
+
+
+
+
+
+
+             <button class="btn btn-primary" > <i class="fas fa-sync-alt"></i>Modifier </button>
+            </form>
+
+
+
+        <!-- form update end here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

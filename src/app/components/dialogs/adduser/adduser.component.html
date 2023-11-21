@@ -1,0 +1,148 @@
+<Html>
+  <head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  </head>
+</Html>
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#" ><i class="fa-solid fa-shop me-2"></i> <strong>Auto École</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase active" aria-current="page" routerLink="/users"
+          style="color: #ffc107;">Utilisateurs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/vehicules">Véhicules</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/calendrier">Séances</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/examens">Examens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase"routerLink="">Cours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/quizlist">Quizs</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto ">
+
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mon profil</span>
+
+          </a>
+          <!-- Dropdown - User Information -->
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+              aria-labelledby="userDropdown">
+
+              <button class="dropdown-item" (click)="logout()" >
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+              </button>
+          </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ <div  class="container-sm" >
+
+  <form #f="ngForm" (ngSubmit)="add(f)">
+<!-- firstName validation start here -->
+    <div class="form-group">
+
+
+      <label for="exampleFormControlInput1">Nom d'utilisateur</label>
+      <input type="text" class="form-control" placeholder="firstName" required name="username" #username="ngModel" ngModel minlength="2" maxlength="20">
+    </div>
+
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">email</label>
+        <input type="email" class="form-control" placeholder="email" email required name="email" #email="ngModel" ngModel>
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1">password</label>
+        <input type="text" class="form-control" placeholder="password" required name="password" #password="ngModel" ngModel>
+      </div>
+
+ <!-- age validation end here -->
+
+
+ <!-- Phone validation start here -->
+ <div class="form-group">
+
+<label for="exampleFormControlInput1">Nom </label>
+ <input type="text" class="form-control" placeholder="nom" required name="nom" #nom="ngModel" ngModel minlength="2" maxlength="20">
+</div>
+<div class="form-group">
+<label for="exampleFormControlInput1">prénom </label>
+<input type="text" class="form-control" placeholder="prénom" required name="prenom" #prenom="ngModel" ngModel minlength="2" maxlength="20">
+</div>
+
+
+
+<div class="form-group">
+<label for="exampleFormControlInput1">Date de naissance  </label>
+<input type="text" class="form-control" placeholder="Date de naissance" required name="dateNaissance" #dateNaissance="ngModel" ngModel minlength="2" maxlength="20">
+</div>
+
+
+
+
+
+<div class="form-group">
+<label for="exampleFormControlInput1">Numéro de Téléphone </label>
+<input type="text" class="form-control" placeholder="numéroTel" required name="numeroTel" #numeroTel="ngModel" ngModel minlength="2" maxlength="20">
+</div>
+
+
+
+
+<div class="form-group">
+<label for="exampleFormControlInput1">Numéro Cin </label>
+<input type="number" class="form-control" placeholder="numeroCin" required name="numeroCin" #numéroCin="ngModel" ngModel minlength="2" maxlength="20">
+</div>
+
+
+<div class="form-group">
+  <label for="exampleFormControlInput1">Role  </label>
+  <input type="text" class="form-control" placeholder="Role" required name="role" #role="ngModel" ngModel minlength="2" maxlength="20">
+  </div>
+
+
+
+
+
+
+
+
+
+<!-- Phone validation end here -->
+      <div class="alert alert-danger" *ngIf="messageErr">
+        {{messageErr}}
+      </div>
+
+   <button class="btn btn-primary" ><i class="fas fa-user"></i>Enregistrer </button>
+  </form>
+
+
+ </div>
+
+

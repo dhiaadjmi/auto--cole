@@ -1,0 +1,97 @@
+
+<Html>
+  <head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  </head>
+</Html>
+<nav class="navbar navbar-expand-lg bg-white sticky-top navbar-light p-3 shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#" ><i class="fa-solid fa-shop me-2"></i> <strong>Auto École</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase " routerLink="/users">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase active" aria-current="page" routerLink="/users"
+          style="color: #ffc107;"routerLink="/vehicules">Véhicules</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/calendrier">Séances</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/examens">Examens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase"routerLink="">Cours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2 text-uppercase" routerLink="/quizlist">Quizs</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto ">
+
+        <li class="nav-item dropdown no-arrow">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mon profil</span>
+
+          </a>
+          <!-- Dropdown - User Information -->
+          <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+              aria-labelledby="userDropdown">
+
+              <button class="dropdown-item" (click)="logout()" >
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+              </button>
+          </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-sm">
+  <form #f="ngForm" (ngSubmit)="add(f)">
+    <div class="form-group">
+      <label for="matricule">Matricule</label>
+      <input type="text" class="form-control" id="matricule" name="matricule" placeholder="Matricule"   #matricule="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="marque">Marque</label>
+      <input type="text" class="form-control" id="marque" name="marque" placeholder="Marque"  #marque="ngModel"  ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="modele">Modèle</label>
+      <input type="text" class="form-control" id="modele" name="modele" placeholder="Modèle"  #modele="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="numeroSerie">Numéro de Série</label>
+      <input type="text" class="form-control" id="numeroSerie" name="numeroSerie" placeholder="Numéro de Série" #numeroSerie="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="dateAssurance">Date d'Assurance</label>
+      <input type="text" class="form-control" id="dateAssurance" name="dateAssurance" placeholder="Date d'Assurance"  #dateAssurance="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="dateFinAssurance">Date de Fin d'Assurance</label>
+      <input type="text" class="form-control" id="dateFinAssurance" name="dateFinAssurance" placeholder="Date de Fin d'Assurance"  #dateFinAssurance="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="dateControleTechnique">Date de Contrôle Technique</label>
+      <input type="text" class="form-control" id="dateCtrlTechnique" name="dateCtrlTechnique" placeholder="Date de Contrôle Technique"  #dateCtrlTechnique="ngModel" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="dateProchainCtrlTechnique">Date de Prochain Contrôle Technique</label>
+      <input type="text" class="form-control" id="dateProchainCtrlTechnique" name="dateProchainCtrlTechnique" placeholder="Date de Prochain Contrôle Technique"  #dateProchainCtrlTechnique="ngModel" ngModel required>
+    </div>
+    <button type="submit" class="btn btn-primary"><i class="fas fa-car"></i> Enregistrer</button>
+  </form>
+</div>

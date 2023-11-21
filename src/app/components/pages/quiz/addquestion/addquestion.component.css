@@ -1,0 +1,60 @@
+label{
+  font-size: 17px;
+  padding: 10px 0;
+}
+
+button{
+
+  margin-top: 20px;
+}
+
+.btn-primary{
+  background-color: #ffc107;
+  font-weight: 600;
+  outline: none;
+  border: none;
+}
+
+/* input */
+
+input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+  font-size:14px;
+  font-weight:700
+}
+.superNav {
+  font-size:13px;
+}
+.navbar-brand {
+  color: #ffc107;
+  font-size: 1.2em;
+}
+.active {
+
+  color: #ffc107; /* Changer la couleur du texte en blanc pour améliorer la lisibilité */
+}
+.form-control {
+  outline:none !important;
+  box-shadow: none !important;
+}
+@media screen and (max-width:540px){
+  .centerOnMobile {
+    text-align:center
+  }
+}
